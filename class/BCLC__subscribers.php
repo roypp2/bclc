@@ -46,7 +46,7 @@ class BCLC_subscriber
         $res = false;
         if(isset($_REQUEST['BCLC_submit'])) 
         {
-            $secret = '6LefTA8dAAAAAMIhBahK2oQ80iRTPWdP2nRUzuhp';
+            $secret = '';
             $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response']);
             $responseData = json_decode($verifyResponse);
             if ($responseData->success) 
@@ -178,7 +178,7 @@ class BCLC_subscriber
                   <input type="text" class="form-control" id="website_needs" name="website_needs" value="<?php echo @$_REQUEST['website_needs']; ?>" style="border: solid;" required>
               </div>
               <div class="mb-3">
-                <div class="g-recaptcha" data-sitekey="6LefTA8dAAAAAK2zwvGcCwyY5eKWsJa6M_xAjeUz"></div>
+                <div class="g-recaptcha" data-sitekey=""></div>
               </div>
               <br/>
               <div class="mb-3">
