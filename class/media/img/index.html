@@ -1,0 +1,53 @@
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+
+
+<script type="text/javascript">
+var addEvent = function(obj, evt, fn) {
+  if (obj.addEventListener) {
+    obj.addEventListener(evt, fn, false);
+  }
+  else if (obj.attachEvent) {
+    obj.attachEvent("on" + evt, fn);
+  }
+};
+
+addEvent(document, "mouseout", function(event) {
+  event = event ? event : window.event;
+  var from = event.relatedTarget || event.toElement;
+  if ( (!from || from.nodeName == "HTML") && event.clientY <= 100 ) {
+    document.getElementById("test").value = 111;
+  }
+});                        
+</script>
+
+<form><input id="test" placeholder = "Write something here" value="" /></form> 
+
+<!--
+                        <!DOCTYPE html> 
+                        <html> 
+                        <head> 
+                            <title></title> 
+                        </head> 
+                          
+                        <body> 
+                            <h1 style="color: red"> IDKBLOGS </h1>  
+                            <b>Detect browser or tab closing | IDKBlogs</b> 
+                              
+                            <p> 
+                                In the javascript, A browser or tab closing can be detected by the beforeunload event. 
+                            </p> 
+                              
+                            <form><input id="test" placeholder = "Write something here" value="" /></form> 
+                              
+                            <script type="text/javascript"> 
+                                window.addEventListener('beforeunload', function (e) { 
+                                    e.preventDefault(); 
+                                    e.returnValue = 'sdfssdfdf'; 
+                                    return 'hi';
+                                }); 
+                                document.getElementById("test").focus();
+                                document.getElementById("test").value = 111;
+                            </script> 
+                        </body> 
+                        </html>
+-->
